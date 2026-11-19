@@ -64,7 +64,7 @@ for name, (title, key, desc) in PAGES.items():
 open(f"{ROOT}/dist/favicon.svg", "w").write(open(f"{ROOT}/src/favicon.svg").read())
 
 # Search discovery resources (generated alongside the public site).
-open(f"{ROOT}/dist/robots.txt", "w").write("User-agent: *\\nAllow: /\\nDisallow: /dist/\\n\\nSitemap: https://www.rhema.co.in/sitemap.xml\\n")
+open(f"{ROOT}/dist/robots.txt", "w").write("User-agent: *\nAllow: /\nDisallow: /dist/\n\nSitemap: https://www.rhema.co.in/sitemap.xml\n")
 open(f"{ROOT}/dist/sitemap.xml", "w").write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.rhema.co.in/</loc></url>
