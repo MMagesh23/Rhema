@@ -1,0 +1,538 @@
+<title>Rhema Solutions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rhema Solutions builds custom software, business process automation, SaaS products and AI-enabled solutions for businesses worldwide.">
+<meta name="theme-color" content="#0f172a">
+<meta property="og:title" content="Rhema Solutions">
+<meta property="og:description" content="Rhema Solutions builds custom software, business process automation, SaaS products and AI-enabled solutions for businesses worldwide.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap">
+<style>
+/* Rhema Solutions site. Structure: 12-column container, a 4/8 split for section headings, hairline-ruled rows for services and products, one animated hero diagram. Brand: navy #0F172A, blue #2563EB, purple #7C3AED, Inter. */
+:root {
+  --bg: #ffffff; --bg-alt: #f5f7fb; --surface: #ffffff;
+  --ink: #0b1220; --muted: #46546b; --line: #e1e7f1; --line-strong: #c9d3e4;
+  --navy: #0f172a; --blue: #2563eb; --purple: #7c3aed; --blue-ink: #1d4ed8;
+  --btn-bg: #2563eb; --btn-fg: #ffffff; --btn-hover: #1d4ed8;
+  --tint: #eef3ff; --ok: #0f7a4a; --ok-bg: #dcf5e8; --dev: #5b21b6; --dev-bg: #ede7ff;
+  --shadow: 0 1px 2px rgba(15,23,42,.05), 0 12px 32px -12px rgba(15,23,42,.18);
+  --grid: rgba(15,23,42,.06);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #060b18; --bg-alt: #0a1226; --surface: #0e1730;
+    --ink: #eef2fa; --muted: #9aa7bf; --line: #1c2742; --line-strong: #2b3a5e;
+    --blue-ink: #8db0ff; --btn-bg: #3b74ff; --btn-hover: #5a8aff; --tint: #0f1d3d;
+    --ok: #6fe0a8; --ok-bg: #0e2f22; --dev: #c9b8ff; --dev-bg: #231a49;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.7);
+    --grid: rgba(148,163,200,.07); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #060b18; --bg-alt: #0a1226; --surface: #0e1730;
+  --ink: #eef2fa; --muted: #9aa7bf; --line: #1c2742; --line-strong: #2b3a5e;
+  --blue-ink: #8db0ff; --btn-bg: #3b74ff; --btn-hover: #5a8aff; --tint: #0f1d3d;
+  --ok: #6fe0a8; --ok-bg: #0e2f22; --dev: #c9b8ff; --dev-bg: #231a49;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.7);
+  --grid: rgba(148,163,200,.07); color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--font); margin: 0; overflow-x: clip;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 60; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+h1 { font-weight: 800; letter-spacing: -.04em; line-height: 1.02; font-size: clamp(40px, 5.6vw, 76px); }
+h2 { font-weight: 700; letter-spacing: -.03em; line-height: 1.08; font-size: clamp(30px, 3.8vw, 46px); }
+h3 { font-weight: 650; letter-spacing: -.02em; line-height: 1.2; font-size: 21px; }
+p { margin: 0; }
+a { color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img, svg { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 8px; z-index: 100; font-weight: 600; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 8px); }
+svg.lucide { width: 20px; height: 20px; stroke-width: 1.8; flex: none; }
+.muted { color: var(--muted); }
+
+/* header */
+.hdr { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.hdr-in { max-width: 1200px; margin: 0 auto; min-height: 68px; display: flex; align-items: center; gap: 28px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-size: 21px; letter-spacing: -.03em; line-height: 1; white-space: nowrap; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.brand b { font-weight: 800; }
+.brand span { font-weight: 500; color: var(--muted); }
+.nav { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; font-size: 15.5px; color: var(--muted); padding: 8px 12px; border-radius: 8px; }
+.nav a:not(.btn):hover { color: var(--ink); background: var(--bg-alt); }
+.nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.menu-btn { display: none; margin-left: auto; font: 600 15px var(--font); background: transparent; color: var(--ink); border: 1.5px solid var(--line-strong); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+@media (max-width: 880px) {
+  .menu-btn { display: inline-flex; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-left, 0px)) 18px; gap: 2px; display: none; margin-left: 0; }
+  .nav.open { display: flex; }
+  .nav a:not(.btn) { padding: 13px 8px; font-size: 17px; }
+  .nav .btn { margin-top: 8px; justify-content: center; }
+}
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 16px var(--font); text-decoration: none; padding: 13px 22px; border-radius: 10px; border: 1.5px solid transparent; background: var(--btn-bg); color: var(--btn-fg); cursor: pointer; transition: background .15s ease, transform .15s ease, border-color .15s ease; }
+.btn:hover { background: var(--btn-hover); transform: translateY(-1px); }
+.btn.sm { padding: 9px 16px; font-size: 15px; margin-left: 8px; }
+.btn.quiet { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn.quiet:hover { background: var(--bg-alt); border-color: var(--muted); }
+.btn.light { background: #fff; color: #0f172a; }
+.btn.light:hover { background: #e8eefc; }
+.btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+.btn.ghost:hover { background: rgba(255,255,255,.08); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--blue-ink); text-decoration: none; }
+.link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.link svg { transition: transform .2s ease; }
+.link:hover svg { transform: translateX(3px); }
+
+/* shared bits */
+.pill { display: inline-flex; align-items: center; gap: 7px; font: 600 13px var(--font); padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.live { background: var(--ok-bg); color: var(--ok); }
+.pill.dev { background: var(--dev-bg); color: var(--dev); }
+.pill.dev i { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .3; transform: scale(.75); } }
+.tag { background: linear-gradient(135deg, #2563eb, #7c3aed); color: #fff; font: 600 12.5px var(--font); padding: 3px 10px; border-radius: 999px; }
+.sec { padding-block: clamp(56px, 8vw, 112px); }
+.sec.alt { background: var(--bg-alt); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.sec.alt > .wrap { }
+.split { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+@media (max-width: 900px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.split-head { display: grid; gap: 16px; position: sticky; top: 100px; }
+@media (max-width: 900px) { .split-head { position: static; } }
+.split-head p { color: var(--muted); max-width: 40ch; }
+.eyebrow { font-weight: 600; font-size: 15px; color: var(--blue-ink); }
+
+/* hero */
+.hero { position: relative; padding-block: clamp(40px, 6vw, 88px) clamp(48px, 7vw, 96px); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)); overflow: hidden; border-bottom: 1px solid var(--line); }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 80% 90% at 70% 40%, #000 20%, transparent 75%); pointer-events: none; }
+.hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+@media (max-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+.hero-copy { display: grid; gap: 24px; justify-items: start; }
+.hero .lead { font-size: 20px; color: var(--muted); max-width: 50ch; }
+.note { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 5px 16px 5px 5px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); max-width: 100%; }
+.note:hover { border-color: var(--muted); }
+.hero-meta { font-size: 15px; color: var(--muted); }
+
+/* hero diagram */
+.map { position: relative; }
+.map svg { display: block; width: 100%; height: auto; }
+.m-ring { fill: none; stroke: var(--line-strong); stroke-width: 1; }
+.m-ring.dash { stroke-dasharray: 3 7; }
+.m-line { stroke: var(--line-strong); stroke-width: 1.5; fill: none; }
+.m-flow { stroke: var(--blue); stroke-width: 2; fill: none; stroke-dasharray: 5 11; stroke-linecap: round; animation: flow 1.6s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -32; } }
+.m-node rect { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.2; }
+.m-node .ic { fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-node .t1 { font: 650 14.5px var(--font); fill: var(--ink); letter-spacing: -.01em; }
+.m-node .t2 { font: 400 12.5px var(--font); fill: var(--muted); }
+.m-node .chip { fill: var(--tint); }
+.m-pulse { fill: var(--purple); }
+.m-node { animation: nodein .7s cubic-bezier(.2,.8,.2,1) backwards; }
+.m-node:nth-of-type(1) { animation-delay: .35s; } .m-node:nth-of-type(2) { animation-delay: .5s; }
+.m-node:nth-of-type(3) { animation-delay: .65s; } .m-node:nth-of-type(4) { animation-delay: .8s; }
+@keyframes nodein { from { opacity: 0; transform: translateY(10px); } }
+.map-fallback { display: none; }
+@media (max-width: 640px) {
+  .map svg { display: none; }
+  .map-fallback { display: grid; gap: 10px; }
+  .map-fallback li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--surface); font-weight: 600; }
+  .map-fallback svg.lucide { color: var(--blue); }
+}
+
+/* service rows */
+.rows { border-top: 1px solid var(--line-strong); }
+.row { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 8px 20px; align-items: start; padding: 26px 0; border-bottom: 1px solid var(--line); text-decoration: none; position: relative; }
+a.row:hover h3 { color: var(--blue-ink); }
+a.row:hover .go { transform: translateX(4px); color: var(--blue-ink); }
+.row .ico { width: 44px; height: 44px; border-radius: 11px; background: var(--tint); color: var(--blue-ink); display: grid; place-items: center; }
+.row h3 { transition: color .15s ease; }
+.row p { color: var(--muted); margin-top: 6px; max-width: 56ch; }
+.row .go { color: var(--muted); transition: transform .2s ease, color .2s ease; align-self: center; }
+@media (max-width: 560px) { .row { grid-template-columns: 44px minmax(0, 1fr); } .row .go { display: none; } }
+
+/* product rows */
+.prow { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 10px 22px; align-items: start; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.mark { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; color: #fff; flex: none; overflow: hidden; }
+.mark svg.lucide { width: 26px; height: 26px; }
+.mark.vbs { background: #1f6fe0; } .mark.bms { background: #4f46e5; } .mark.gym { background: #cf3223; }
+.mark svg.logo { width: 56px; height: 56px; }
+.prow h3 { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.prow p { color: var(--muted); margin-top: 6px; max-width: 58ch; }
+.prow .meta { color: var(--muted); font-size: 14.5px; margin-top: 8px; }
+.prow .act { align-self: center; }
+@media (max-width: 700px) { .prow { grid-template-columns: 56px minmax(0, 1fr); } .prow .act { grid-column: 2; align-self: start; } }
+
+/* detail blocks (services page) */
+.detail { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 5vw, 80px); padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line-strong); scroll-margin-top: 80px; }
+@media (max-width: 900px) { .detail { grid-template-columns: minmax(0, 1fr); } }
+.detail .d-head { display: grid; gap: 14px; align-content: start; justify-items: start; }
+.detail .d-head .ico { width: 48px; height: 48px; border-radius: 12px; background: var(--tint); color: var(--blue-ink); display: grid; place-items: center; }
+.detail .d-head .ico svg { width: 24px; height: 24px; }
+.detail .d-body { display: grid; gap: 28px; }
+.detail .d-body > p { font-size: 19px; color: var(--muted); max-width: 56ch; }
+.cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+@media (max-width: 700px) { .cols2 { grid-template-columns: minmax(0, 1fr); } }
+.cols2 h4 { font-size: 15px; font-weight: 650; margin-bottom: 12px; }
+.ticks li { position: relative; padding-left: 26px; margin-bottom: 10px; max-width: 46ch; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 12px; height: 7px; border-left: 2.5px solid var(--blue); border-bottom: 2.5px solid var(--blue); transform: rotate(-45deg) translateY(-3px); }
+.fit { background: var(--bg-alt); border-radius: 12px; padding: 16px 18px; font-size: 16px; }
+.fit b { font-weight: 650; }
+
+/* definition table (stack, models) */
+.dl { border-top: 1px solid var(--line-strong); }
+.dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 8px 32px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 640px) { .dl > div { grid-template-columns: minmax(0, 1fr); } }
+.dl dt { font-weight: 650; font-size: 18px; letter-spacing: -.01em; }
+.dl dd { margin: 0; color: var(--muted); max-width: 60ch; }
+
+/* process */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; position: relative; counter-reset: s; }
+.steps::before { content: ""; position: absolute; left: 0; right: 0; top: 21px; height: 2px; background: var(--line-strong); }
+.steps::after { content: ""; position: absolute; left: 0; top: 21px; height: 2px; width: 100%; background: linear-gradient(90deg, var(--blue), var(--purple)); transform-origin: left; transform: scaleX(0); transition: transform 1.4s cubic-bezier(.2,.8,.2,1); }
+.steps.in::after { transform: scaleX(1); }
+.step { position: relative; padding-top: 58px; }
+.step .n { z-index: 1; position: absolute; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--bg); border: 2px solid var(--blue); color: var(--blue-ink); font-weight: 700; display: grid; place-items: center; }
+.step h3 { margin-bottom: 8px; }
+.step p { color: var(--muted); font-size: 16px; max-width: 30ch; }
+@media (max-width: 880px) {
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .steps::before, .steps::after { left: 21px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .steps::after { height: 100%; transform: scaleY(0); transform-origin: top; background: linear-gradient(180deg, var(--blue), var(--purple)); }
+  .steps.in::after { transform: scaleY(1); }
+  .step { padding: 0 0 0 66px; min-height: 44px; }
+}
+
+/* global panel / clocks */
+.clocks { border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); overflow: hidden; box-shadow: var(--shadow); }
+.clocks-head { padding: 16px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14.5px; color: var(--muted); }
+.clock { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: baseline; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+.clock:last-child { border-bottom: 0; }
+.clock .zone { font-weight: 600; }
+.clock .zone small { display: block; font-weight: 400; color: var(--muted); font-size: 13.5px; }
+.clock time { font: 700 26px var(--font); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.clock.us { background: var(--tint); }
+.clock.us .zone { color: var(--blue-ink); }
+
+/* cta */
+.cta { background: var(--navy); color: #fff; border-radius: 24px; padding: clamp(32px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px 48px; align-items: end; position: relative; overflow: hidden; border: 1px solid #1e293b; }
+.cta::after { content: ""; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; border: 1px solid rgba(255,255,255,.1); box-shadow: 0 0 0 60px rgba(255,255,255,.025), 0 0 0 120px rgba(255,255,255,.02); pointer-events: none; }
+@media (max-width: 860px) { .cta { grid-template-columns: minmax(0, 1fr); } }
+.cta h2 { font-size: clamp(34px, 4.8vw, 58px); letter-spacing: -.035em; max-width: 16ch; }
+.cta p { color: #cbd5e1; margin-top: 14px; max-width: 48ch; font-size: 18px; }
+.cta .side { display: grid; gap: 14px; position: relative; z-index: 1; }
+.cta .phone { color: #fff; font-weight: 600; font-size: 18px; text-decoration: none; }
+.cta .phone:hover { text-decoration: underline; text-underline-offset: 4px; }
+.cta .cta-row { position: relative; z-index: 1; }
+
+/* page hero (inner pages) */
+.phero { padding-block: clamp(36px, 5vw, 72px) clamp(32px, 5vw, 64px); display: grid; gap: 20px; }
+.crumbs { font-size: 14.5px; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap; }
+.crumbs a { text-decoration: none; } .crumbs a:hover { color: var(--ink); text-decoration: underline; }
+.phero h1 { font-size: clamp(38px, 5vw, 64px); max-width: 18ch; }
+.phero .lead { font-size: 20px; color: var(--muted); max-width: 56ch; }
+
+/* contact */
+.cgrid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+@media (max-width: 900px) { .cgrid { grid-template-columns: minmax(0, 1fr); } }
+.form { display: grid; gap: 18px; }
+.f2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 600px) { .f2 { grid-template-columns: minmax(0, 1fr); } }
+.fld { display: grid; gap: 6px; }
+.fld label { font-weight: 600; font-size: 15px; }
+.fld input, .fld select, .fld textarea { font: 400 16px var(--font); color: var(--ink); background: var(--surface); border: 1.5px solid var(--line-strong); border-radius: 10px; padding: 12px 14px; width: 100%; }
+.fld textarea { min-height: 150px; resize: vertical; }
+.fld input:focus, .fld select:focus, .fld textarea:focus { outline: 3px solid color-mix(in srgb, var(--blue) 35%, transparent); outline-offset: 0; border-color: var(--blue); }
+.fld .err { color: #c0262d; font-size: 14px; min-height: 0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .fld .err { color: #ff8a90; } }
+:root[data-theme="dark"] .fld .err { color: #ff8a90; }
+.fld [aria-invalid="true"] { border-color: #c0262d; }
+.draft { border: 1.5px solid var(--blue); border-radius: 14px; padding: 20px; display: grid; gap: 14px; background: var(--tint); }
+.draft pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: 400 15px/1.55 var(--font); background: var(--surface); border-radius: 10px; padding: 14px 16px; border: 1px solid var(--line); }
+.info { display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
+.info > div { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.info dt { font-size: 14.5px; color: var(--muted); font-weight: 500; }
+.info dd { margin: 0; font-size: 18px; font-weight: 600; }
+.info dd a { text-decoration: none; } .info dd a:hover { text-decoration: underline; text-underline-offset: 4px; color: var(--blue-ink); }
+.info dd small { display: block; font-weight: 400; font-size: 15px; color: var(--muted); margin-top: 2px; }
+
+/* footer */
+.ftr { border-top: 1px solid var(--line); margin-top: clamp(24px, 4vw, 48px); padding-block: clamp(40px, 6vw, 72px) 28px; }
+.ftr-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 36px; }
+@media (max-width: 900px) { .ftr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ftr-brand { grid-column: 1 / -1; } }
+.ftr-brand p { color: var(--muted); max-width: 34ch; margin-top: 14px; font-size: 15.5px; }
+.ftr h4 { font-size: 14.5px; font-weight: 650; margin-bottom: 14px; }
+.ftr li { margin-bottom: 9px; }
+.ftr li a { color: var(--muted); text-decoration: none; font-size: 15.5px; }
+.ftr li a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.ftr-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .steps::after { transform: none !important; }
+}
+
+</style>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="hdr-in">
+  <a class="brand" href="index.html" aria-label="Rhema Solutions, home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="1" y="1" width="62" height="62" rx="15" fill="#0F172A" stroke="var(--line-strong)" stroke-width="2"/><rect x="15" y="14" width="9" height="36" rx="2.2" fill="#fff"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="#fff"/><path d="M31 41h12.5l9.5 9H40.5z" fill="#60A5FA"/></svg><span><b>Rhema</b> Solutions</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" class="nav" aria-label="Main"><a href="services.html">Services</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn sm" href="contact.html">Start a project</a></nav>
+</div></header>
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <a class="note" href="products.html#intelligence"><span class="tag">New</span>Rhema Intelligence, our AI business platform, is in development</a>
+      <h1 id="h1">Custom software, automation and AI for businesses worldwide.</h1>
+      <p class="lead">Rhema Solutions designs and builds the software growing organisations depend on, from the first prototype to a production release.</p>
+      <div class="cta-row"><a class="btn" href="contact.html">Start a project</a><a class="btn quiet" href="services.html">Explore our services</a></div>
+      <p class="hero-meta">Built in India. Working with teams around the world.</p>
+    </div>
+
+    <div class="map">
+      <svg viewBox="0 0 600 440" role="img" aria-label="Diagram: Rhema at the centre, connected to four services: custom software, process automation, SaaS products and AI solutions.">
+        <circle class="m-ring" cx="300" cy="220" r="86"/><circle class="m-ring dash" cx="300" cy="220" r="150"/><circle class="m-ring dash" cx="300" cy="220" r="214"/>
+        <g>
+          <line class="m-line" x1="300" y1="220" x2="236" y2="100"/><line class="m-line" x1="300" y1="220" x2="364" y2="100"/>
+          <line class="m-line" x1="300" y1="220" x2="236" y2="340"/><line class="m-line" x1="300" y1="220" x2="364" y2="340"/>
+          <line class="m-flow" x1="300" y1="220" x2="236" y2="100"/><line class="m-flow" x1="300" y1="220" x2="364" y2="100" style="animation-delay:-.4s"/>
+          <line class="m-flow" x1="300" y1="220" x2="236" y2="340" style="animation-delay:-.8s"/><line class="m-flow" x1="300" y1="220" x2="364" y2="340" style="animation-delay:-1.2s"/>
+          <circle class="m-pulse" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M300 220 L236 100"/></circle>
+          <circle class="m-pulse" r="4"><animateMotion dur="3.2s" begin="-.8s" repeatCount="indefinite" path="M300 220 L364 100"/></circle>
+          <circle class="m-pulse" r="4"><animateMotion dur="3.2s" begin="-1.6s" repeatCount="indefinite" path="M300 220 L236 340"/></circle>
+          <circle class="m-pulse" r="4"><animateMotion dur="3.2s" begin="-2.4s" repeatCount="indefinite" path="M300 220 L364 340"/></circle>
+        </g>
+        <g class="m-node"><rect x="22" y="62" width="214" height="64" rx="14"/><rect class="chip" x="38" y="78" width="32" height="32" rx="9"/>
+          <g class="ic" transform="translate(42 82) scale(.96)"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <text class="t1" x="82" y="92">Custom software</text><text class="t2" x="82" y="110">Built around your team</text></g>
+        <g class="m-node"><rect x="364" y="62" width="214" height="64" rx="14"/><rect class="chip" x="380" y="78" width="32" height="32" rx="9"/>
+          <g transform="translate(384 82) scale(.96)" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></g>
+          <text class="t1" x="424" y="92">Process automation</text><text class="t2" x="424" y="110">Fewer manual steps</text></g>
+        <g class="m-node"><rect x="22" y="314" width="214" height="64" rx="14"/><rect class="chip" x="38" y="330" width="32" height="32" rx="9"/>
+          <g transform="translate(42 334) scale(.96)" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></g>
+          <text class="t1" x="82" y="344">SaaS products</text><text class="t2" x="82" y="362">Idea to subscription</text></g>
+        <g class="m-node"><rect x="364" y="314" width="214" height="64" rx="14"/><rect class="chip" x="380" y="330" width="32" height="32" rx="9"/>
+          <g transform="translate(384 334) scale(.96)" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></g>
+          <text class="t1" x="424" y="344">AI-enabled solutions</text><text class="t2" x="424" y="362">Answers from your data</text></g>
+        <g transform="translate(262 182)"><rect width="76" height="76" rx="19" fill="#0f172a" stroke="var(--line-strong)" stroke-width="1.5"/>
+          <g transform="scale(1.1875)"><rect x="15" y="14" width="9" height="36" rx="2.2" fill="#fff"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="#fff"/><path d="M31 41h12.5l9.5 9H40.5z" fill="#60a5fa"/></g></g>
+      </svg>
+      <ul class="map-fallback" aria-label="Our services">
+        <li><i data-lucide="code-xml"></i>Custom software development</li>
+        <li><i data-lucide="refresh-cw"></i>Business process automation</li>
+        <li><i data-lucide="layers"></i>SaaS product development</li>
+        <li><i data-lucide="sparkles"></i>AI-enabled solutions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="s-h">
+  <div class="wrap split">
+    <div class="split-head">
+      <span class="eyebrow">Services</span>
+      <h2 id="s-h">What we build for you</h2>
+      <p>Four ways we help, from a single internal tool to a full product with paying customers.</p>
+      <a class="link" href="services.html">All services <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="rows">
+      <a class="row" href="services.html#custom-software"><span class="ico"><i data-lucide="code-xml"></i></span><div><h3>Custom software development</h3><p>Web applications, internal tools and integrations shaped around how your team actually works.</p></div><i class="go" data-lucide="arrow-right"></i></a>
+      <a class="row" href="services.html#automation"><span class="ico"><i data-lucide="refresh-cw"></i></span><div><h3>Business process automation</h3><p>Approvals, reminders, reports and data entry that run on their own and ask a person only when needed.</p></div><i class="go" data-lucide="arrow-right"></i></a>
+      <a class="row" href="services.html#saas"><span class="ico"><i data-lucide="layers"></i></span><div><h3>SaaS product development</h3><p>Multi-tenant products with accounts, roles, subscriptions and usage limits, ready for customers.</p></div><i class="go" data-lucide="arrow-right"></i></a>
+      <a class="row" href="services.html#ai"><span class="ico"><i data-lucide="sparkles"></i></span><div><h3>AI-enabled solutions</h3><p>Assistants and insights that work from your own data, with permissions, sources and approvals built in.</p></div><i class="go" data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" aria-labelledby="p-h">
+  <div class="wrap split">
+    <div class="split-head">
+      <span class="eyebrow">Products</span>
+      <h2 id="p-h">Software we build and run ourselves</h2>
+      <p>The same team builds our own products, so we know the work of shipping and supporting software first hand.</p>
+      <a class="link" href="products.html">All products <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="rows">
+      <div class="prow"><span class="mark"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><rect width="64" height="64" fill="url(#ig)"/><rect x="15" y="14" width="9" height="36" rx="2.2" fill="#fff"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="#fff"/><path d="M31 41h12.5l9.5 9H40.5z" fill="#fff"/></svg></span><div><h3>Rhema Intelligence <span class="pill dev"><i></i>In development</span></h3><p>An AI business platform with CRM, finance, HR, inventory and a Copilot that answers from your data.</p></div><a class="link act" href="products.html#intelligence">Learn more <i data-lucide="arrow-right"></i></a></div>
+      <div class="prow"><span class="mark vbs"><i data-lucide="book-open"></i></span><div><h3>Rhema VBS <span class="pill live"><i></i>Live</span></h3><p>Registration, classes, QR check-in, attendance and reports for Vacation Bible School.</p></div><a class="link act" href="https://vbs.rhema.co.in" target="_blank" rel="noopener">Visit site <i data-lucide="arrow-up-right"></i></a></div>
+      <div class="prow"><span class="mark bms"><i data-lucide="users"></i></span><div><h3>Rhema BMS <span class="pill live"><i></i>Live</span></h3><p>Family and believer records for congregations, with reminders, reports and analytics.</p></div><a class="link act" href="https://cbms.rhema.co.in" target="_blank" rel="noopener">Visit site <i data-lucide="arrow-up-right"></i></a></div>
+      <div class="prow"><span class="mark gym"><i data-lucide="dumbbell"></i></span><div><h3>Rhema Gym ERP <span class="pill live"><i></i>Live</span></h3><p>Members, plans, payments, equipment and staff for gyms, on one dashboard.</p></div><a class="link act" href="https://gym.rhema.co.in" target="_blank" rel="noopener">Visit site <i data-lucide="arrow-up-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="w-h">
+  <div class="wrap">
+    <div class="split-head" style="position:static;margin-bottom:44px;max-width:640px">
+      <span class="eyebrow">How we work</span>
+      <h2 id="w-h">A clear path from idea to release</h2>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="n">1</span><h3>Discover</h3><p>We learn how your business runs, agree the scope and decide how success will be measured.</p></li>
+      <li class="step"><span class="n">2</span><h3>Design</h3><p>We map the workflows, data and screens, and share a plan you can review before we build.</p></li>
+      <li class="step"><span class="n">3</span><h3>Build</h3><p>We deliver in working increments that you can see and test, with automated tests on the critical paths.</p></li>
+      <li class="step"><span class="n">4</span><h3>Launch and improve</h3><p>We release to production, watch how it performs and keep improving it with you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec alt" aria-labelledby="g-h">
+  <div class="wrap split">
+    <div class="split-head">
+      <span class="eyebrow">Global</span>
+      <h2 id="g-h">Built in India, delivered worldwide</h2>
+      <p>We work with organisations across time zones. Send a brief from wherever you are and our team will reply by email.</p>
+      <a class="link" href="contact.html">Contact us <i data-lucide="arrow-right"></i></a>
+    </div>
+    <div class="clocks" aria-label="Current time in several time zones">
+  <div class="clocks-head"><span>Time right now</span><span>Hours are shown in 24-hour time</span></div>
+  <div class="clock us" data-tz="local"><div class="zone"><span class="zone-name">Your time</span><small>Where you are</small></div><time>--:--</time></div>
+  <div class="clock" data-tz="Asia/Kolkata"><div class="zone">India (IST)<small>Where our team is based</small></div><time>--:--</time></div>
+  <div class="clock" data-tz="Europe/London"><div class="zone">London<small>UK and Europe</small></div><time>--:--</time></div>
+  <div class="clock" data-tz="America/New_York"><div class="zone">New York<small>US East</small></div><time>--:--</time></div>
+  <div class="clock" data-tz="Asia/Dubai"><div class="zone">Dubai<small>Middle East</small></div><time>--:--</time></div>
+  <div class="clock" data-tz="Asia/Singapore"><div class="zone">Singapore<small>South-East Asia</small></div><time>--:--</time></div>
+</div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cta-h"><div class="wrap"><div class="cta">
+  <div><h2 id="cta-h">Tell us what you want to build.</h2><p>Share a short brief and we will reply by email with next steps.</p></div>
+  <div class="side">
+    <div class="cta-row"><a class="btn light" href="contact.html">Start a project</a><a class="btn ghost" href="services.html">Our services</a></div>
+    <a class="phone" href="tel:+916369635002">+91 63696 35002</a>
+  </div>
+</div></div></section>
+</main>
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-grid">
+    <div class="ftr-brand">
+      <a class="brand" href="index.html" aria-label="Rhema Solutions, home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="1" y="1" width="62" height="62" rx="15" fill="#0F172A" stroke="var(--line-strong)" stroke-width="2"/><rect x="15" y="14" width="9" height="36" rx="2.2" fill="#fff"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="#fff"/><path d="M31 41h12.5l9.5 9H40.5z" fill="#60A5FA"/></svg><span><b>Rhema</b> Solutions</span></a>
+      <p>Custom software, automation and AI for businesses and organisations worldwide.</p>
+    </div>
+    <div><h4>Services</h4><ul>
+      <li><a href="services.html#custom-software">Custom software development</a></li>
+      <li><a href="services.html#automation">Business process automation</a></li>
+      <li><a href="services.html#saas">SaaS product development</a></li>
+      <li><a href="services.html#ai">AI-enabled solutions</a></li></ul></div>
+    <div><h4>Products</h4><ul>
+      <li><a href="products.html#intelligence">Rhema Intelligence</a></li>
+      <li><a href="https://vbs.rhema.co.in" target="_blank" rel="noopener">Rhema VBS</a></li>
+      <li><a href="https://cbms.rhema.co.in" target="_blank" rel="noopener">Rhema BMS</a></li>
+      <li><a href="https://gym.rhema.co.in" target="_blank" rel="noopener">Rhema Gym ERP</a></li></ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a href="tel:+916369635002">+91 63696 35002</a></li>
+      <li><a href="mailto:hello@rhema.co.in">hello@rhema.co.in</a></li>
+      <li><a href="mailto:sales@rhema.co.in">sales@rhema.co.in</a></li>
+      <li><a href="about.html">About us</a></li></ul></div>
+  </div>
+  <div class="ftr-base"><span>&copy; 2026 Rhema Solutions. All rights reserved.</span><span>Technology that moves you forward.</span></div>
+</div></footer>
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  try { if (window.lucide) window.lucide.createIcons(); } catch (e) {}
+
+  /* Mobile menu */
+  var mb = $('.menu-btn'), nav = $('#nav');
+  if (mb && nav) {
+    mb.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded', String(open));
+      mb.textContent = open ? 'Close' : 'Menu';
+    });
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.textContent = 'Menu'; } });
+  }
+
+  /* Hero diagram: drop the moving pulses for reduced motion */
+  if (reduce) $$('animateMotion').forEach(function (el) { el.parentNode.removeChild(el); });
+
+  /* Process line fills when it scrolls into view */
+  var steps = $('.steps');
+  if (steps) {
+    if (reduce || !('IntersectionObserver' in window)) { steps.classList.add('in'); }
+    else {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { steps.classList.add('in'); io.disconnect(); } }); }, { threshold: 0.3 });
+      io.observe(steps);
+    }
+  }
+
+  /* Time zones */
+  var clocks = $$('[data-tz]');
+  if (clocks.length) {
+    var local = 'UTC';
+    try { local = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) {}
+    var us = $('[data-tz="local"]');
+    if (us) {
+      us.setAttribute('data-tz', local);
+      var sm = $('small', us); if (sm) sm.textContent = local.replace(/_/g, ' ');
+    }
+    var tick = function () {
+      var now = new Date();
+      $$('[data-tz]').forEach(function (el) {
+        var tz = el.getAttribute('data-tz'), out = '--:--';
+        try { out = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz }).format(now); } catch (e) {}
+        var t = $('time', el); if (t) t.textContent = out;
+      });
+    };
+    tick(); setInterval(tick, 20000);
+  }
+
+  /* Enquiry form: builds a ready-to-send email, since this site has no mail server of its own */
+  var form = $('#enquiry');
+  if (form) {
+    var TO = form.getAttribute('data-to');
+    var draft = $('#draft'), pre = $('#draftText'), openA = $('#openMail'), copyB = $('#copyDraft'), status = $('#copyStatus');
+    var need = function (id, msg) {
+      var f = $('#' + id), er = $('#' + id + '-err'), bad = false;
+      if (id === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim());
+      else bad = !f.value.trim();
+      f.setAttribute('aria-invalid', String(bad)); er.textContent = bad ? msg : '';
+      return !bad;
+    };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = [need('name', 'Enter your name.'), need('email', 'Enter a valid email address.'), need('message', 'Tell us a little about what you need.')];
+      if (ok.indexOf(false) !== -1) { var first = $('[aria-invalid="true"]', form); if (first) first.focus(); return; }
+      var v = function (id) { return $('#' + id).value.trim(); };
+      var subject = 'Project enquiry' + (v('service') ? ': ' + v('service') : '') + (v('company') ? ' (' + v('company') + ')' : '');
+      var body = 'Name: ' + v('name') + '\nEmail: ' + v('email') + (v('company') ? '\nCompany: ' + v('company') : '') + (v('country') ? '\nCountry: ' + v('country') : '') + (v('service') ? '\nInterested in: ' + v('service') : '') + '\n\n' + v('message');
+      pre.textContent = 'To: ' + TO + '\nSubject: ' + subject + '\n\n' + body;
+      openA.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      draft.hidden = false; status.textContent = '';
+      draft.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+    });
+    copyB.addEventListener('click', function () {
+      var txt = pre.textContent, done = function () { status.textContent = 'Copied. Paste it into an email to ' + TO + '.'; };
+      var fallback = function () { try { var r = document.createRange(); r.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); status.textContent = 'Selected. Copy it with your keyboard.'; } catch (e) {} };
+      try { navigator.clipboard.writeText(txt).then(done, fallback); } catch (e) { fallback(); }
+    });
+    $$('input, textarea', form).forEach(function (f) { f.addEventListener('input', function () { if (f.getAttribute('aria-invalid') === 'true') need(f.id, f.id === 'email' ? 'Enter a valid email address.' : 'This field is required.'); }); });
+  }
+})();
+
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Rhema Solutions", "url": "https://www.rhema.co.in", "logo": "https://www.rhema.co.in/favicon.svg", "description": "Rhema Solutions builds custom software, business process automation, SaaS products and AI-enabled solutions for businesses worldwide.", "telephone": "+916369635002", "email": "hello@rhema.co.in", "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "telephone": "+916369635002", "email": "sales@rhema.co.in", "availableLanguage": "English"}, {"@type": "ContactPoint", "contactType": "customer support", "email": "support@rhema.co.in", "availableLanguage": "English"}]}</script>

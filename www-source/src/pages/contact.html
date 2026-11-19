@@ -1,0 +1,53 @@
+{{HEADER}}
+<main id="main">
+<div class="wrap">
+  <section class="phero" aria-labelledby="h1">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+    <h1 id="h1">Contact us</h1>
+    <p class="lead">Tell us what you want to build, automate or improve. We work with clients in every time zone and reply by email.</p>
+  </section>
+
+  <section class="cgrid" style="padding-bottom:clamp(40px,6vw,80px)" aria-label="Contact form and details">
+    <div>
+      <form class="form" id="enquiry" data-to="{{EMAIL_SALES}}" novalidate>
+        <div class="f2">
+          <div class="fld"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required><div class="err" id="name-err" aria-live="polite"></div></div>
+          <div class="fld"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="email-err" aria-live="polite"></div></div>
+        </div>
+        <div class="f2">
+          <div class="fld"><label for="company">Company</label><input id="company" name="company" autocomplete="organization"></div>
+          <div class="fld"><label for="country">Country</label><input id="country" name="country" autocomplete="country-name"></div>
+        </div>
+        <div class="fld"><label for="service">What do you need?</label>
+          <select id="service" name="service"><option value="">Choose a service</option><option>Custom software development</option><option>Business process automation</option><option>SaaS product development</option><option>AI-enabled solutions</option><option>Rhema product support</option><option>Something else</option></select></div>
+        <div class="fld"><label for="message">Tell us about your project</label><textarea id="message" name="message" required></textarea><div class="err" id="message-err" aria-live="polite"></div></div>
+        <div class="cta-row"><button class="btn" type="submit">Prepare my message</button></div>
+        <p class="muted" style="font-size:15px">This prepares an email to {{EMAIL_SALES}} with your details filled in. You send it from your own email app.</p>
+      </form>
+      <div class="draft" id="draft" hidden style="margin-top:24px" role="region" aria-label="Your message">
+        <h3>Your message is ready</h3>
+        <pre id="draftText"></pre>
+        <div class="cta-row"><a class="btn" id="openMail" href="#">Open in email app</a><button class="btn quiet" type="button" id="copyDraft">Copy message</button></div>
+        <p class="muted" id="copyStatus" aria-live="polite" style="font-size:15px"></p>
+      </div>
+    </div>
+
+    <aside aria-label="Company contact details">
+      <dl class="info">
+        <div><dt>Phone</dt><dd><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a><small>Call from anywhere. Include the country code.</small></dd></div>
+        <div><dt>New projects and partnerships</dt><dd><a href="mailto:{{EMAIL_SALES}}">{{EMAIL_SALES}}</a></dd></div>
+        <div><dt>General enquiries</dt><dd><a href="mailto:{{EMAIL_GENERAL}}">{{EMAIL_GENERAL}}</a></dd></div>
+        <div><dt>Support for Rhema products</dt><dd><a href="mailto:{{EMAIL_SUPPORT}}">{{EMAIL_SUPPORT}}</a><small>For Rhema VBS, BMS and Gym ERP customers.</small></dd></div>
+      </dl>
+    </aside>
+  </section>
+</div>
+
+<section class="sec alt" aria-labelledby="g-h">
+  <div class="wrap split">
+    <div class="split-head"><span class="eyebrow">Time zones</span><h2 id="g-h">Working across time zones</h2><p>Our team is based in India (IST, UTC+5:30). Check the time where you are against ours before you call.</p></div>
+    {{CLOCKS}}
+  </div>
+</section>
+</main>
+{{FOOTER}}

@@ -1,0 +1,138 @@
+<title>Rhema Brand Mark</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: the chosen mark large on two backgrounds, a size ladder, the colourways, rejected concepts with reasons, then colour and usage rules. Left aligned. */
+:root {
+  --bg: #F8FAFC; --surface: #FFFFFF; --ink: #0F172A; --muted: #475569; --line: #E2E8F0; --blue: #2563EB; --blue-ink: #1D4ED8;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #020617; --surface: #0F172A; --ink: #F1F5F9; --muted: #94A3B8; --line: #1E293B; --blue-ink: #93C5FD; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #020617; --surface: #0F172A; --ink: #F1F5F9; --muted: #94A3B8; --line: #1E293B; --blue-ink: #93C5FD; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--font); margin: 0; padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3 { margin: 0; letter-spacing: -.035em; line-height: 1.05; text-wrap: balance; }
+h1 { font-weight: 800; font-size: clamp(40px, 6.2vw, 78px); }
+h2 { font-weight: 800; font-size: clamp(28px, 4vw, 42px); }
+h3 { font-weight: 700; font-size: 21px; letter-spacing: -.02em; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.top { padding-block: clamp(40px, 7vw, 88px) clamp(28px, 5vw, 52px); display: grid; gap: 18px; max-width: 780px; }
+.top p { font-size: 20px; color: var(--muted); max-width: 56ch; }
+.sec { padding-block: clamp(36px, 6vw, 72px); border-top: 1px solid var(--line); }
+.stage-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+@media (max-width: 720px) { .stage-row { grid-template-columns: minmax(0, 1fr); } }
+.stage { border-radius: 16px; padding: clamp(24px, 5vw, 52px); display: flex; align-items: center; gap: 20px; min-height: 210px; }
+.stage.l { background: #FFFFFF; color: #0F172A; border: 1px solid #E2E8F0; }
+.stage.d { background: #020617; color: #F8FAFC; }
+.stage svg { width: clamp(76px, 14vw, 120px); flex: none; }
+.lock { display: flex; flex-direction: column; line-height: 1; }
+.lock b { font: 800 clamp(30px, 5vw, 46px) var(--font); letter-spacing: -.04em; }
+.lock span { font: 500 clamp(17px, 2.8vw, 26px) var(--font); letter-spacing: -.02em; opacity: .7; margin-top: 4px; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 40px; margin-top: 28px; }
+@media (max-width: 860px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.cols div { border-top: 1px solid var(--line); padding-top: 16px; }
+.cols p { color: var(--muted); margin-top: 8px; font-size: 16px; }
+.ladder { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 28px 36px; margin-top: 28px; }
+.ladder figure { margin: 0; display: grid; gap: 10px; justify-items: start; }
+.ladder figcaption { font-size: 13px; color: var(--muted); }
+.alt { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start; padding-block: 24px; border-top: 1px solid var(--line); }
+.alt:first-of-type { border-top: 0; }
+@media (max-width: 640px) { .alt { grid-template-columns: minmax(0, 1fr); } }
+.alt .tile { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; display: flex; justify-content: center; }
+.alt .tile svg { width: 110px; height: 110px; }
+.alt ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 24px; }
+.sw { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.sw i { display: block; height: 72px; }
+.sw div { padding: 10px 14px 12px; font-size: 14px; }
+.sw b { display: block; font-weight: 600; }
+.sw span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.rules { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; max-width: 70ch; }
+.rules li { padding-left: 22px; position: relative; }
+.rules li::before { content: ""; position: absolute; left: 0; top: .72em; width: 10px; height: 3px; border-radius: 2px; background: var(--blue); }
+footer { padding-block: 32px 56px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="rg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+    <symbol id="r-mark" viewBox="0 0 64 64"><rect x="15" y="14" width="9" height="36" rx="2.2" fill="currentColor"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="currentColor"/><path d="M31 41h12.5l9.5 9H40.5z" fill="var(--leg, currentColor)"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <h1>One mark for the whole Rhema family.</h1>
+    <p>The Block R is built from three solid pieces: a stem, a bowl and a leg that leans forward. It reads as a letter first, looks like a software company, and holds up at 16 pixels.</p>
+  </header>
+
+  <section class="sec" aria-labelledby="rec">
+    <h2 id="rec">Recommended: the Block R</h2>
+    <p class="muted" style="margin-top:12px;max-width:62ch">The three blocks stand for the building blocks of software. The leg leans forward to match the line "Technology that moves you forward".</p>
+    <div class="stage-row">
+      <div class="stage l">
+        <svg viewBox="0 0 64 64" role="img" aria-label="Rhema Intelligence mark"><rect width="64" height="64" rx="15" fill="url(#rg)"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#fff"/></svg>
+        <div class="lock"><b>Rhema</b><span>Intelligence</span></div>
+      </div>
+      <div class="stage d">
+        <svg viewBox="0 0 64 64" role="img" aria-label="Rhema Solutions mark"><rect width="64" height="64" rx="15" fill="#0F172A" stroke="#1E293B" stroke-width="1"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#60A5FA"/></svg>
+        <div class="lock"><b>Rhema</b><span>Solutions</span></div>
+      </div>
+    </div>
+    <div class="cols">
+      <div><h3>Gradient tile: the AI product</h3><p>Rhema Intelligence uses the blue to purple tile with a white R. The gradient marks it as the AI product.</p></div>
+      <div><h3>Navy tile: the company</h3><p>Rhema Solutions uses a flat navy tile with a light-blue leg. It is calm enough to sit beside the other products.</p></div>
+      <div><h3>No tile: for text and documents</h3><p>On plain light or dark backgrounds, use the bare R with an accent leg. Files for both are included.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="sizes">
+    <h2 id="sizes">Holds up small</h2>
+    <p class="muted" style="margin-top:12px;max-width:62ch">The stem and bowl are heavy enough that the R still reads at the 16 pixel size of a browser tab.</p>
+    <div class="ladder">
+      <figure><svg width="128" height="128" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0F172A"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#60A5FA"/></svg><figcaption>128 px</figcaption></figure>
+      <figure><svg width="64" height="64" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0F172A"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#60A5FA"/></svg><figcaption>64 px</figcaption></figure>
+      <figure><svg width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0F172A"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#60A5FA"/></svg><figcaption>32 px</figcaption></figure>
+      <figure><svg width="16" height="16" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0F172A"/><use href="#r-mark" width="64" height="64" style="color:#fff;--leg:#60A5FA"/></svg><figcaption>16 px, browser tab</figcaption></figure>
+      <figure><svg width="80" height="80" viewBox="0 0 64 64" style="background:#fff;border-radius:12px;border:1px solid #E2E8F0"><use href="#r-mark" width="64" height="64" style="color:#0F172A;--leg:url(#rg)"/></svg><figcaption>No tile, on light</figcaption></figure>
+      <figure><svg width="80" height="80" viewBox="0 0 64 64" style="background:#020617;border-radius:12px"><use href="#r-mark" width="64" height="64" style="color:#F8FAFC;--leg:#818CF8"/></svg><figcaption>No tile, on dark</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="alts">
+    <h2 id="alts">Concepts we passed on</h2>
+    <div style="margin-top:12px">
+      <div class="alt">
+        <div class="tile"><svg viewBox="0 0 64 64" role="img" aria-label="Forward arrow R concept"><defs><linearGradient id="ga" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="#0B1220"/><path d="M18 49V15h15a10.5 10.5 0 0 1 0 21H18" fill="none" stroke="url(#ga)" stroke-width="7" stroke-linejoin="round"/><path d="M32 36l15 13M47 40v9h-9" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Arrow R</h3><ul><li>An R whose leg is an arrow, tied to the "forward" idea.</li><li>The arrow points down and to the right, so it reads as "download" more than "progress".</li><li>The thin bowl also gets weak below 32 px.</li></ul></div>
+      </div>
+      <div class="alt">
+        <div class="tile"><svg viewBox="0 0 64 64" role="img" aria-label="Hexagon R concept"><defs><linearGradient id="gc" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><path d="M32 3 57 17.5v29L32 61 7 46.5v-29z" fill="url(#gc)"/><path d="M24 45V20h10a6.5 6.5 0 0 1 0 13H24M33 33l8 12" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Hexagon R</h3><ul><li>A rounded R inside a hexagon, a familiar shape for tech brands.</li><li>Clear and friendly, but it looks like many other platforms.</li><li>The hexagon does not say anything about Rhema.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="sys">
+    <h2 id="sys">Colour and type</h2>
+    <div class="swatches">
+      <div class="sw"><i style="background:#0F172A"></i><div><b>Primary Navy</b><span>#0F172A</span></div></div>
+      <div class="sw"><i style="background:#2563EB"></i><div><b>Primary Blue</b><span>#2563EB</span></div></div>
+      <div class="sw"><i style="background:#7C3AED"></i><div><b>Accent Purple</b><span>#7C3AED</span></div></div>
+      <div class="sw"><i style="background:#60A5FA"></i><div><b>Leg on navy</b><span>#60A5FA</span></div></div>
+      <div class="sw"><i style="background:#F8FAFC;border-bottom:1px solid #E2E8F0"></i><div><b>Light Background</b><span>#F8FAFC</span></div></div>
+      <div class="sw"><i style="background:#020617"></i><div><b>Dark Background</b><span>#020617</span></div></div>
+    </div>
+    <ul class="rules">
+      <li>Set the wordmark in Inter: "Rhema" in ExtraBold with tight spacing, and "Solutions" or "Intelligence" in Medium.</li>
+      <li>Keep clear space around the mark equal to one quarter of its width.</li>
+      <li>Do not use the mark below 16 px, or the full lockup below 120 px wide.</li>
+      <li>Do not stretch the mark, change the leg to another colour, or put the gradient tile on a blue or purple background.</li>
+    </ul>
+  </section>
+
+  <footer>Files: rhema-intelligence-mark.svg, rhema-solutions-mark.svg, rhema-mark-on-light.svg, rhema-mark-on-dark.svg and favicon.svg. The lockup text is live Inter, so convert it to outlines in your design tool before print.</footer>
+</div>

@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="Rhema">
+<defs><linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+<rect x="15" y="14" width="9" height="36" rx="2.2" fill="#F8FAFC"/><path d="M29 14h8a11 11 0 0 1 0 22h-8z" fill="#F8FAFC"/><path d="M31 41h12.5l9.5 9H40.5z" fill="#818CF8"/></svg>
