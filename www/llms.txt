@@ -1,0 +1,18 @@
+# Rhema Solutions
+
+Rhema Solutions builds custom software, business process automation, SaaS products and AI-enabled solutions for businesses worldwide.
+
+## Public pages
+- https://www.rhema.co.in/ — Company overview
+- https://www.rhema.co.in/products.html — Software products
+- https://www.rhema.co.in/services.html — Services
+- https://www.rhema.co.in/about.html — About the company
+- https://www.rhema.co.in/contact.html — Contact
+
+## Products
+- Rhema VBS: https://vbs.rhema.co.in/
+- Rhema BMS: https://cbms.rhema.co.in/
+- Rhema Gym ERP: https://gym.rhema.co.in/
+- Rhema Intelligence: https://app.rhema.co.in/ (in development)
+
+Use the linked public pages as the source of truth for current capabilities and availability.
