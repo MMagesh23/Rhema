@@ -36,11 +36,11 @@ for name, (title, key, desc) in PAGES.items():
         body = body.replace(k, v)
     left = re.findall(r"\{\{[A-Z_]+\}\}", body)
     assert not left, (name, left)
-    ld = f'<script type="application/ld+json">{LD}</script>' if name == "index" else ""
-    head = (f'<title>{title}</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<meta name="description" content="{desc}">\n'
+    ld = f'<script type="application/ld+json">{LD}</script>' if name == "index" else ""\n    product_ld = json.dumps({"@context": "https://schema.org", "@type": "ItemList", "name": "Rhema Solutions software products", "itemListElement": [\n        {"@type": "ListItem", "position": 1, "item": {"@type": "SoftwareApplication", "name": "Rhema VBS", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://vbs.rhema.co.in/", "publisher": {"@type": "Organization", "name": "Rhema Solutions", "url": "https://www.rhema.co.in/"} }},\n        {"@type": "ListItem", "position": 2, "item": {"@type": "SoftwareApplication", "name": "Rhema BMS", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://cbms.rhema.co.in/", "publisher": {"@type": "Organization", "name": "Rhema Solutions", "url": "https://www.rhema.co.in/"} }},\n        {"@type": "ListItem", "position": 3, "item": {"@type": "SoftwareApplication", "name": "Rhema Gym ERP", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://gym.rhema.co.in/", "publisher": {"@type": "Organization", "name": "Rhema Solutions", "url": "https://www.rhema.co.in/"} }}\n    ]}) if name == "products" else ""
+    canonical = "https://www.rhema.co.in/" if name == "index" else f"https://www.rhema.co.in/{name}.html"\n    head = (f'<title>{title}</title>\\n<meta name="claude:viewport-fit-sides" content="cover">\\n<meta name="description" content="{desc}">\\n'\n            f'<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">\\n<link rel="canonical" href="{canonical}">\\n'\n            f'<meta property="og:url" content="{canonical}">\\n<meta property="og:site_name" content="Rhema Solutions">\\n<meta property="og:type" content="website">\\n'\n            f'<meta name="twitter:card" content="summary_large_image">\\n<meta name="twitter:title" content="{title}">\\n<meta name="twitter:description" content="{desc}">\\n'
             f'<meta name="theme-color" content="#0f172a">\n<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
             f'<link rel="icon" type="image/svg+xml" href="favicon.svg">\n{FONTS}\n<style>\n{css}\n</style>\n')
-    tail = f"\n{LUCIDE}\n<script>\n{js}\n</script>\n{ld}\n"
+    tail = f"\n{LUCIDE}\n<script>\n{js}\n</script>\n{ld}\n" + (f'<script type="application/ld+json">{product_ld}</script>\\n' if product_ld else "")
     if name == "index":  # the artifact host wraps this file in its own document skeleton
         out = head + body + tail
     else:
@@ -49,3 +49,8 @@ for name, (title, key, desc) in PAGES.items():
     open(f"{ROOT}/dist/{name}.html", "w").write(out)
     print(name, len(out))
 open(f"{ROOT}/dist/favicon.svg", "w").write(open(f"{ROOT}/src/favicon.svg").read())
+
+# Search discovery resources (generated alongside the public site).
+open(f"{ROOT}/dist/robots.txt", "w").write("User-agent: *\nAllow: /\nDisallow: /dist/\n\nSitemap: https://www.rhema.co.in/sitemap.xml\n")
+open(f"{ROOT}/dist/sitemap.xml", "w").write("""<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>https://www.rhema.co.in/</loc></url>\n  <url><loc>https://www.rhema.co.in/products.html</loc></url>\n  <url><loc>https://www.rhema.co.in/services.html</loc></url>\n  <url><loc>https://www.rhema.co.in/about.html</loc></url>\n  <url><loc>https://www.rhema.co.in/contact.html</loc></url>\n</urlset>\n""")
+open(f"{ROOT}/dist/llms.txt", "w").write("# Rhema Solutions\n\nRhema Solutions builds custom software, business process automation, SaaS products and AI-enabled solutions for businesses worldwide.\n\n## Public pages\n- https://www.rhema.co.in/ — Company overview\n- https://www.rhema.co.in/products.html — Software products\n- https://www.rhema.co.in/services.html — Services\n- https://www.rhema.co.in/about.html — About the company\n- https://www.rhema.co.in/contact.html — Contact\n\n## Products\n- Rhema VBS: https://vbs.rhema.co.in/\n- Rhema BMS: https://cbms.rhema.co.in/\n- Rhema Gym ERP: https://gym.rhema.co.in/\n- Rhema Intelligence: https://app.rhema.co.in/ (in development)\n\nUse the linked public pages as the source of truth for current capabilities and availability.\n")
